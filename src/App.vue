@@ -1,22 +1,28 @@
 <script lang="ts">
-  import { RouterLink, RouterView } from 'vue-router'
-  import VueAccordion from './components/VueAccordion.vue'
+  import { RouterLink, RouterView } from "vue-router";
+  import ChapterThree from "./components/ChapterThree.vue";
 
   export default {
     components: {
       RouterLink,
       RouterView,
-      VueAccordion
-    }
-  }
+      ChapterThree,
+    },
+  };
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg?url" width="125" height="125" />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg?url"
+      width="125"
+      height="125"
+    />
 
     <div class="wrapper">
-      <VueAccordion />
+      <ChapterThree />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
