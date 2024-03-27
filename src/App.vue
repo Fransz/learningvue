@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { RouterLink, RouterView } from "vue-router";
-  import ChapterThree from "./components/ChapterThree.vue";
+  import { RouterLink, RouterView } from 'vue-router';
+  import SomeAccordion from './components/vuetify/SomeAccordion.vue';
 
   export default {
     components: {
       RouterLink,
       RouterView,
-      ChapterThree,
+      SomeAccordion,
     },
   };
 </script>
@@ -22,7 +22,7 @@
     />
 
     <div class="wrapper">
-      <ChapterThree />
+      <SomeAccordion />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

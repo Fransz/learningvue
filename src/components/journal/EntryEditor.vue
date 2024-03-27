@@ -1,60 +1,60 @@
 <script lang="ts" setup>
-  import EmojiField from '@/components/journal/EmojiField.vue'
-  import ArrowCircleRight from '@/assets/journal/arrow-circle-right.svg'
-  import { ref, computed, type Ref, onMounted, inject } from 'vue'
+  import EmojiField from '@/components/journal/EmojiField.vue';
+  import ArrowCircleRight from '@/assets/journal/arrow-circle-right.svg';
+  import { ref, computed, type Ref, onMounted, inject } from 'vue';
 
-  import type Emoji from '@/components/journal/types/Emoji.ts'
-  import type Entry from '@/components/journal/types/Entry.ts'
-  import { userInjectionKey } from './injectionkeys'
+  import type Emoji from '@/components/journal/types/Emoji.ts';
+  import type Entry from '@/components/journal/types/Entry.ts';
+  import { userInjectionKey } from './injectionkeys';
 
   /**
    * Data
    */
-  const user = inject(userInjectionKey)
-  const body: Ref<string> = ref<string>('')
-  let emoji = ref<Emoji | null>(null)
-  const length = computed<number>(() => body.value.length)
+  const user = inject(userInjectionKey);
+  const body: Ref<string> = ref<string>('');
+  let emoji = ref<Emoji | null>(null);
+  const length = computed<number>(() => body.value.length);
 
-  const maxLength = 280
+  const maxLength = 280;
 
   /**
    * Event handlers.
    * Nice demonstration. But we might do this with the maxLength attriute of textarea.
    */
   const handleClick = (e: Event) => {
-    const textArea = e.target as HTMLTextAreaElement
+    const textArea = e.target as HTMLTextAreaElement;
     if (textArea.value.length <= maxLength) {
-      body.value = textArea.value
+      body.value = textArea.value;
     } else {
-      body.value = textArea.value = textArea.value.substring(0, maxLength)
+      body.value = textArea.value = textArea.value.substring(0, maxLength);
     }
-  }
+  };
 
   const handleSubmit = () => {
     emit('@create', {
       body: body.value,
       emoji: emoji.value,
       userId: 1,
-      createdAt: Date(),
-      id: Math.floor(Math.random() * 100)
-    })
+      createdAt: new Date(),
+      id: Math.floor(Math.random() * 100),
+    });
 
-    body.value = ''
-    emoji.value = null
-  }
+    body.value = '';
+    emoji.value = null;
+  };
 
   /**
    * template refs
    */
-  const textarea = ref<HTMLTextAreaElement | null>(null)
-  onMounted(() => textarea.value?.focus())
+  const textarea = ref<HTMLTextAreaElement | null>(null);
+  onMounted(() => textarea.value?.focus());
 
   /**
    * Emits
    */
   const emit = defineEmits<{
-    (e: '@create', entry: Entry): void
-  }>()
+    (e: '@create', entry: Entry): void;
+  }>();
 </script>
 
 <template>
