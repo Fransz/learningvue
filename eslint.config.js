@@ -5,7 +5,6 @@ import {
 } from "node:url";
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
-// @ts-expect-error eslint-plugin-vue has no types
 import pluginVue from 'eslint-plugin-vue'
 import vueEslintParser from 'vue-eslint-parser'
 
@@ -22,9 +21,12 @@ const cfg = tseslint.config(
         parser: "@typescript-eslint/parser",
         project: './tsconfig.app.json',
         tsconfigRootDir: path.dirname(fileURLToPath(import.meta.url)),
-        extraFileExtensions: [ '.vue' ]
+        extraFileExtensions: ['.vue']
       },
     },
+    rules: {
+      'vue/html-self-closing': 'off' // This rule conflicts with prettier.
+    }
   },
 );
 
