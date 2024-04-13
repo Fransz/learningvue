@@ -5,9 +5,9 @@ import {
 } from "node:url";
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
+// @ts-expect-error eslint-plugin-vue has no types
 import pluginVue from 'eslint-plugin-vue'
 import vueEslintParser from 'vue-eslint-parser'
-import globals from 'globals'
 
 console.log(path.dirname(fileURLToPath(import.meta.url)))
 const cfg = tseslint.config(
