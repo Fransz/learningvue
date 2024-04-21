@@ -7,58 +7,72 @@
     - Ze zeggen zelf dat ze een alpha versie zijn.
     - Voor de setup moet je vite.config.js aanpassen, en je main script.
   */
-  import 'bootstrap'
-  import 'bootstrap/dist/css/bootstrap.min.css'
+  import 'bootstrap';
+  import 'bootstrap/dist/css/bootstrap.min.css';
 
-  import type { Ref } from 'vue'
-  import { ref } from 'vue'
+  import type { Ref } from 'vue';
+  import { ref } from 'vue';
 
   interface Crebo {
-    naam: string
-    erkenningen: Erkenning[]
+    naam: string;
+    erkenningen: Erkenning[];
   }
   interface Erkenning {
-    naam: string
+    naam: string;
   }
 
-  const erkenning1 = { naam: 'erkenning1' }
-  const erkenning2 = { naam: 'erkenning2' }
-  const erkenning3 = { naam: 'erkenning3' }
-  const erkenning4 = { naam: 'erkenning4' }
-  const erkenning5 = { naam: 'erkenning4' }
-  const erkenning6 = { naam: 'erkenning4' }
-  const erkenning7 = { naam: 'erkenning4' }
-  const erkenning8 = { naam: 'erkenning4' }
-  const erkenning9 = { naam: 'erkenning4' }
-  const erkenning10 = { naam: 'erkenning4' }
-  const erkenning11 = { naam: 'erkenning4' }
-  const erkenning12 = { naam: 'erkenning4' }
-  const erkenning13 = { naam: 'erkenning4' }
-  const erkenning14 = { naam: 'erkenning4' }
-  const erkenning15 = { naam: 'erkenning4' }
-  const erkenning16 = { naam: 'erkenning4' }
-  const erkenning17 = { naam: 'erkenning4' }
-  const erkenning18 = { naam: 'erkenning4' }
-  const erkenning19 = { naam: 'erkenning4' }
-  const erkenning20 = { naam: 'erkenning4' }
-  const erkenning21 = { naam: 'erkenning4' }
-  const erkenning22 = { naam: 'erkenning4' }
-  const erkenning23 = { naam: 'erkenning4' }
-  const erkenning24 = { naam: 'erkenning4' }
-  const erkenning25 = { naam: 'erkenning4' }
-  const erkenning26 = { naam: 'erkenning4' }
-  const erkenning27 = { naam: 'erkenning4' }
-  const erkenning28 = { naam: 'erkenning4' }
-  const erkenning29 = { naam: 'erkenning4' }
+  const erkenning1 = { naam: 'erkenning1' };
+  const erkenning2 = { naam: 'erkenning2' };
+  const erkenning3 = { naam: 'erkenning3' };
+  const erkenning4 = { naam: 'erkenning4' };
+  const erkenning5 = { naam: 'erkenning4' };
+  const erkenning6 = { naam: 'erkenning4' };
+  const erkenning7 = { naam: 'erkenning4' };
+  const erkenning8 = { naam: 'erkenning4' };
+  const erkenning9 = { naam: 'erkenning4' };
+  const erkenning10 = { naam: 'erkenning4' };
+  const erkenning11 = { naam: 'erkenning4' };
+  const erkenning12 = { naam: 'erkenning4' };
+  const erkenning13 = { naam: 'erkenning4' };
+  const erkenning14 = { naam: 'erkenning4' };
+  const erkenning15 = { naam: 'erkenning4' };
+  const erkenning16 = { naam: 'erkenning4' };
+  const erkenning17 = { naam: 'erkenning4' };
+  const erkenning18 = { naam: 'erkenning4' };
+  const erkenning19 = { naam: 'erkenning4' };
+  const erkenning20 = { naam: 'erkenning4' };
+  const erkenning21 = { naam: 'erkenning4' };
+  const erkenning22 = { naam: 'erkenning4' };
+  const erkenning23 = { naam: 'erkenning4' };
+  const erkenning24 = { naam: 'erkenning4' };
+  const erkenning25 = { naam: 'erkenning4' };
+  const erkenning26 = { naam: 'erkenning4' };
+  const erkenning27 = { naam: 'erkenning4' };
+  const erkenning28 = { naam: 'erkenning4' };
+  const erkenning29 = { naam: 'erkenning4' };
 
   const creboos: Ref<Crebo[]> = ref([
     {
       naam: 'Crebo1',
-      erkenningen: [erkenning1, erkenning2, erkenning3, erkenning4, erkenning5, erkenning6]
+      erkenningen: [
+        erkenning1,
+        erkenning2,
+        erkenning3,
+        erkenning4,
+        erkenning5,
+        erkenning6,
+      ],
     },
     {
       naam: 'Crebo2',
-      erkenningen: [erkenning11, erkenning12, erkenning13, erkenning14, erkenning15, erkenning16]
+      erkenningen: [
+        erkenning11,
+        erkenning12,
+        erkenning13,
+        erkenning14,
+        erkenning15,
+        erkenning16,
+      ],
     },
     {
       naam: 'Crebo3',
@@ -91,18 +105,25 @@
         erkenning26,
         erkenning27,
         erkenning28,
-        erkenning29
-      ]
-    }
-  ])
+        erkenning29,
+      ],
+    },
+  ]);
 </script>
 
 <template>
   <div id="mainwrapper">
     <h1>Hello we're back</h1>
     <div id="creboAccordion">
-      <div v-for="(creboItem, creboIdx) in creboos" :key="creboIdx" class="accordion-item">
-        <h2 class="" id="">
+      <div
+        v-for="(creboItem, creboIdx) in creboos"
+        :key="creboIdx"
+        class="accordion-item"
+      >
+        <h2
+          id=""
+          class=""
+        >
           <button
             aria-expanded="false"
             class="accordion-button"
@@ -115,19 +136,24 @@
           </button>
         </h2>
         <div
+          :id="`collapse${creboIdx}`"
           aria-labelledby="`collapse${creboIdx}`"
           class="accordion-collapse collapse"
           data-bs-parent="#creboAccordion"
-          :id="`collapse${creboIdx}`"
         >
           <div class="erkenning-items accordion-body">
-            <div v-for="(erkenningItem, erkenningIdx) of creboItem.erkenningen" :key="erkenningIdx">
+            <div
+              v-for="(erkenningItem, erkenningIdx) of creboItem.erkenningen"
+              :key="erkenningIdx"
+            >
               <input
-                type="checkbox"
                 :id="`erkenning_${creboIdx}_${erkenningIdx}`"
+                type="checkbox"
                 :value="`${erkenningItem.naam}`"
               />
-              <label :for="`erkenning_${creboIdx}_${erkenningIdx}`">{{ erkenningItem.naam }}</label>
+              <label :for="`erkenning_${creboIdx}_${erkenningIdx}`">{{
+                erkenningItem.naam
+              }}</label>
             </div>
           </div>
         </div>

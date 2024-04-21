@@ -9,9 +9,9 @@ type Emoji =
   | 'sad'
   | 'shocked'
   | 'smiling'
-  | 'smiling'
+   
   | 'surprised'
   | 'wink'
-  | 'worried'
+  | 'worried';
 
-export default Emoji
+export default Emoji;

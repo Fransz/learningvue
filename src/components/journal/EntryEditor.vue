@@ -58,11 +58,14 @@
 </script>
 
 <template>
-  <form class="entry-form" @submit.prevent="handleSubmit">
+  <form
+    class="entry-form"
+    @submit.prevent="handleSubmit"
+  >
     <textarea
+      ref="textarea"
       :placeholder="`New entry for user ${user?.name || 'anonymous'}`"
       :value="body"
-      ref="textarea"
       @keyup="handleClick"
     ></textarea>
     <EmojiField v-model="emoji" />

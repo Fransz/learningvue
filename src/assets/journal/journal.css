@@ -6,61 +6,62 @@
 #journal {
   @apply bg-white dark:bg-slate-900  text-gray-800 dark:text-white;
 }
-#journal.container{
+#journal.container {
   max-width: 800px;
 }
-#journal  button{
+#journal button {
   @apply px-5 py-2 bg-red-700 rounded text-white flex;
-
 }
-#journal  button svg path{
+#journal button svg path {
   @apply fill-white;
 }
-#journal  button svg{
+#journal button svg {
   @apply ml-3 fill-white;
 }
-#journal svg, #journal svg path{
+#journal svg,
+#journal svg path {
   @apply fill-slate-700 dark:fill-white rounded-2xl;
 }
 
 /* Entry Form */
-#journal .entry-form{
+#journal .entry-form {
   @apply p-5 rounded-md mt-10 bg-gray-200 dark:bg-slate-800;
 }
-#journal .entry-form textarea{
+#journal .entry-form textarea {
   @apply w-full p-5 rounded-md mb-5 dark:bg-slate-900 h-40 resize-none;
 }
-#journal .entry-form-footer{
+#journal .entry-form-footer {
   @apply flex justify-between;
 }
-#journal .emoji-container{
+#journal .emoji-container {
   @apply flex mb-5;
 }
-#journal .emoji-container svg{
-  transition: .2s ease all;
+#journal .emoji-container svg {
+  transition: 0.2s ease all;
   @apply w-8 mr-2 cursor-pointer;
 }
-#journal .emoji-container svg.selected, .emoji-container svg.selected path{
+#journal .emoji-container svg.selected,
+.emoji-container svg.selected path {
   @apply fill-white dark:fill-white rounded-3xl;
   @apply bg-teal-700 dark:bg-teal-700;
 }
-#journal .emoji-container svg:hover{
+#journal .emoji-container svg:hover {
   transform: scale(1.1);
 }
 
 /* Entry Card */
-#journal .entry-card{
+#journal .entry-card {
   @apply mt-5 bg-gray-200 dark:bg-slate-800 rounded-md p-5;
 }
-#journal .entry-card-body{
+#journal .entry-card-body {
   @apply flex items-center;
 }
-#journal .entry-card svg{
+#journal .entry-card svg {
   @apply mr-5 min-w-max;
 }
-#journal .entry-footer{
+#journal .entry-footer {
   @apply flex text-teal-800 dark:text-teal-300 text-sm justify-end;
 }
-#journal .entry-footer span{
-  opacity: .6;
+#journal .entry-footer span {
+  opacity: 0.6;
 }

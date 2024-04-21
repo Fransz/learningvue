@@ -1,13 +1,14 @@
 <script lang="ts">
   import { RouterLink, RouterView } from 'vue-router';
-  import SomeAccordion from './components/vuetify/SomeAccordion.vue';
+  import ErkenningItem from './components/calder/ErkenningItem.vue';
 
   export default {
     components: {
       RouterLink,
       RouterView,
-      SomeAccordion,
+      ErkenningItem,
     },
+    setup() {},
   };
 </script>
 
@@ -22,11 +23,9 @@
     />
 
     <div class="wrapper">
-      <SomeAccordion />
-
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/"> Home </RouterLink>
+        <RouterLink to="/about"> About </RouterLink>
       </nav>
     </div>
   </header>

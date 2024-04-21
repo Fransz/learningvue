@@ -13,7 +13,7 @@ const cfg = tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   ...pluginVue.configs['flat/recommended'], {
-    ignores: ['**/*.js', '**/eslint.config.mjs', '**/vitest.config.ts', '**/vite.config.ts'],
+    ignores: ['**/*.js', '**/__tests__/', '**/eslint.config.mjs', '**/vitest.config.ts', '**/vite.config.ts'],
   }, {
     languageOptions: {
       "parser": vueEslintParser,

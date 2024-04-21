@@ -8,14 +8,22 @@ import { createVuetify } from 'vuetify';
 import 'vuetify/styles';
 
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
+import { nl, en } from 'vuetify/locale';
 
 import App from './App.vue';
+import ErkenningItemView from './components/calder/ErkenningItemView.vue';
+import FancyListView from './components/fancylist/FancyListView.vue';
 
-const app = createApp(App);
+const app = createApp(ErkenningItemView);
 
 app.use(createPinia());
 app.use(
   createVuetify({
+    locale: {
+      locale: 'nl',
+      fallback: 'en',
+      messages: { nl, en },
+    },
     icons: {
       defaultSet: 'mdi',
       aliases,

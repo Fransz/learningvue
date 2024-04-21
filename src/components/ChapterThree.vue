@@ -30,14 +30,14 @@
 
     // watchers react on reactive values, but do not return a reactive value.
     watch: {
-      msg(oldValue: string, newValue: string) {
+      msg(oldValue: string) {
         console.log(oldValue);
         this.user.age = 62;
       },
 
       // Watchers can be objects with additional attributes: handler, deep, immediate, flush
       user: {
-        handler(oldValue, newValue) {
+        handler(oldValue: User, newValue: User) {
           console.log(
             `User: user ${oldValue.name} changed. We ${newValue ? 'do' : 'dont'} have a new value`,
           );
@@ -63,9 +63,14 @@
   <div class="chapter3">
     <div>
       <label for="msg-input">Enter your text</label>
-      <input v-model="msg" type="text" />
+      <input
+        v-model="msg"
+        type="text"
+      />
     </div>
-    <h1 class="header">{{ msg }}</h1>
+    <h1 class="header">
+      {{ msg }}
+    </h1>
     <h1 class="header">
       {{ reverseMsg }}<span>({{ lengthMsg }})</span>
     </h1>
