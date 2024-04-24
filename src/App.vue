@@ -1,12 +1,10 @@
 <script lang="ts">
   import { RouterLink, RouterView } from 'vue-router';
-  import ErkenningItem from './components/calder/ErkenningItem.vue';
 
   export default {
     components: {
       RouterLink,
       RouterView,
-      ErkenningItem,
     },
     setup() {},
   };
@@ -26,6 +24,7 @@
       <nav>
         <RouterLink to="/"> Home </RouterLink>
         <RouterLink to="/about"> About </RouterLink>
+        <RouterLink to="/github-repos"> Github Repos </RouterLink>
       </nav>
     </div>
   </header>

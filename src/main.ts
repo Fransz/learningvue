@@ -14,7 +14,7 @@ import App from './App.vue';
 import ErkenningItemView from './components/calder/ErkenningItemView.vue';
 import FancyListView from './components/fancylist/FancyListView.vue';
 
-const app = createApp(ErkenningItemView);
+const app = createApp(App);
 
 app.use(createPinia());
 app.use(
