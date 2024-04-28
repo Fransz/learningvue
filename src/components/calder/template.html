@@ -1,29 +1,88 @@
 <v-container class="erkenning-regel">
-  <v-row>
-  <div>{{code}}</div>
-  <div>{{description}}</div>
-  <div>{{startDate}}</div>
-  <div>{{endDate}}</div>
-  </v-row>
-  <v-row>
-     <v-menu
-    :close-on-content-click="true"
-         v-model="startDateMenuOpen"
-  >
-    <template v-slot:activator="{props}">
-    <v-text-field
-      label="TheDate"
-      :model-value="sDate.fullDate"
-      readonly
-      v-bind="props"
-      prepend-icon="event"
-      variant="solo"
-      hide-details
-    ></v-text-field>
-    </template>
-    <v-date-picker v-model="sDate" >
+  <v-form ref="formRef">
+    <v-row>
+      <v-col
+        cols="12"
+        md="2">
+        <v-checkbox :label="code" />
+      </v-col>
 
-    </v-date-picker>
-      </v-menu>
-  </v-row>
+      <v-col
+        cols="12"
+        md="3">
+        <v-menu
+          :close-on-content-click="false"
+          location-strategy="connected"
+          location="top left"
+          origin="overlap"
+          v-model="startDateMenuOpen">
+          <template v-slot:activator="{props}">
+            <v-text-field
+              hide-details="auto"
+              label="startdatum:"
+              :model-value="startFormatted"
+              prepend-icon="event"
+              readonly
+              :rules="[rules.startNaEind]"
+              validate-on="input lazy"
+              variant="solo"
+              v-bind="props"></v-text-field>
+          </template>
+          <v-date-picker
+            show-adjacent-months
+            @update:model-value="startDateMenuOpen=false"
+            v-model="startSelected">
+          </v-date-picker>
+        </v-menu>
+      </v-col>
+
+      <v-col
+        cols="12"
+        md="3">
+        <v-menu
+          :close-on-content-click="false"
+          location-strategy="connected"
+          location="top left"
+          origin="overlap"
+          v-model="endDateMenuOpen">
+          <template v-slot:activator="{props}">
+            <v-text-field
+              @click:clear="onClearEnd"
+              clearable
+              hide-details="auto"
+              hint="Maak leeg voor onbeperkt"
+              persistent-hint
+              label="eindatum"
+              :model-value="endFormatted"
+              prepend-icon="event"
+              readonly
+              :rules="[rules.eindInToekomst, rules.eindNaStart]"
+              show-adjacent-months
+              variant="solo"
+              validate-on="input lazy"
+              v-bind="props"></v-text-field>
+          </template>
+          <v-date-picker
+            show-adjacent-months
+            @update:model-value="endDateMenuOpen=false"
+            v-model="endSelected">
+          </v-date-picker>
+        </v-menu>
+      </v-col>
+
+      <v-col
+        cols="12"
+        md="2">
+        <v-select
+          label="bron"
+          :items="['handmatig', 'sbb', 'override']"></v-select>
+      </v-col>
+
+      <v-col
+        cols="12"
+        md="2">
+        <v-btn>opslaan</v-btn>
+      </v-col>
+    </v-row>
+  </v-form>
 </v-container>

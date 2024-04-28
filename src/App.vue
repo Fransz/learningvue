@@ -17,8 +17,7 @@
       class="logo"
       src="@/assets/logo.svg?url"
       width="125"
-      height="125"
-    />
+      height="125" />
 
     <div class="wrapper">
       <nav>
@@ -33,6 +32,7 @@
 </template>
 
 <style scoped>
+  @import url('./assets/main.css');
   header {
     line-height: 1.5;
     max-height: 100vh;

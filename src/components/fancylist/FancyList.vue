@@ -1,6 +1,7 @@
 <script lang="ts">
   import { PropType, defineComponent } from 'vue';
   export default defineComponent({
+    name: 'FancyList',
     props: {
       url: { type: String as PropType<string>, required: true },
       perPage: { type: Number as PropType<number>, required: true },

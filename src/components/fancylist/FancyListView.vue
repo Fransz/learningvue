@@ -3,9 +3,10 @@
   import FancyList from './FancyList.vue';
 
   export default defineComponent({
+    name: 'FancyListView',
     components: { FancyList },
     setup() {
-      const url = 'https://somedmain.org';
+      const url = 'https://somedomain.org';
       const perPage = 10;
       return {
         url,

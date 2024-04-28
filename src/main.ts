@@ -14,7 +14,7 @@ import App from './App.vue';
 import ErkenningItemView from './components/calder/ErkenningItemView.vue';
 import FancyListView from './components/fancylist/FancyListView.vue';
 
-const app = createApp(App);
+const app = createApp(ErkenningItemView);
 
 app.use(createPinia());
 app.use(
@@ -30,6 +30,9 @@ app.use(
       sets: {
         mdi,
       },
+    },
+    theme: {
+      defaultTheme: 'dark',
     },
   }),
 );
