@@ -10,11 +10,13 @@ import 'vuetify/styles';
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg';
 import { nl, en } from 'vuetify/locale';
 
-import App from './App.vue';
-import ErkenningItemView from './components/calder/ErkenningItemView.vue';
-import FancyListView from './components/fancylist/FancyListView.vue';
+// import App from './App.vue';
+// import ErkenningItemView from './components/calder/ErkenningItemView.vue';
+import ComboBox from './components/vuetify/ComboBox.vue';
+// import FancyListView from './components/fancylist/FancyListView.vue';
+// import TransitionView from './components/transitions/TransitionView.vue';
 
-const app = createApp(ErkenningItemView);
+const app = createApp(ComboBox);
 
 app.use(createPinia());
 app.use(

@@ -1,4 +1,4 @@
-import { Ref, UnwrapRef, reactive, ref } from 'vue';
+import { Ref, UnwrapRef, ref } from 'vue';
 
 type FetchRespose<T> = {
   data: Ref<UnwrapRef<T> | null>;
@@ -10,7 +10,10 @@ function timeout(time: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-async function sleep(fn: Function, ...args: unknown[]): Promise<unknown> {
+async function fetchSleep(
+  fn: typeof fetch,
+  ...args: Parameters<typeof fetch>
+): Promise<ReturnType<typeof fetch>> {
   console.log(`Sleeping 2000 ms`);
   await timeout(2000);
   return fn(...args);
@@ -24,7 +27,7 @@ export function useFetch<T>(url: string): FetchRespose<T> {
   const fetchData = async () => {
     try {
       loading.value = true;
-      const response = await sleep(fetch, url);
+      const response = await fetchSleep(fetch, url);
 
       if (!response.ok) throw new Error(`Failed to fetch from url: ${url}`);
 

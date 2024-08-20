@@ -1,0 +1,13 @@
+trans-enter-from,
+trans-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+trans-enter-active {
+  transform: all 0.3s ease-out;
+}
+
+trans-leave-active {
+  transform: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}

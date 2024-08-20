@@ -75,7 +75,8 @@
         md="2">
         <v-select
           label="bron"
-          :items="['handmatig', 'sbb', 'override']"></v-select>
+          v-model="selectModel"
+          :items="selectItems"></v-select>
       </v-col>
 
       <v-col
